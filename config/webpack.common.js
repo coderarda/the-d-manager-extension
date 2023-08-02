@@ -3,6 +3,7 @@
 const SizePlugin = require('size-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 const PATHS = require('./paths');
 
@@ -43,11 +44,21 @@ const common = {
           },
         ],
       },
+      {
+        test: /\.ts?$/,
+        use: "ts-loader",
+        exclude: "/node_modules/",
+      },
     ],
   },
+  resolve: {
+    extensions: [".ts", ".js"],
+  },
+  target: "web",
   plugins: [
     // Print file sizes
     new SizePlugin(),
+    new NodePolyfillPlugin(),
     // Copy static assets from `public` folder to `build` folder
     new CopyWebpackPlugin({
       patterns: [
