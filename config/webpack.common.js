@@ -54,11 +54,9 @@ const common = {
   resolve: {
     extensions: [".ts", ".js"],
   },
-  target: "web",
   plugins: [
     // Print file sizes
     new SizePlugin(),
-    new NodePolyfillPlugin(),
     // Copy static assets from `public` folder to `build` folder
     new CopyWebpackPlugin({
       patterns: [

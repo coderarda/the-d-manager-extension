@@ -19,15 +19,15 @@
   },
   "permissions": [
     "activeTab",
+    "tabs",
     "storage",
-    "tabs"
+    "downloads"
   ],
   "content_scripts": [
     {
       "matches": [
         "<all_urls>"
       ],
-      "run_at": "document_idle",
       "js": [
         "contentScript.js"
       ]

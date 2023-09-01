@@ -1,19 +1,14 @@
 'use strict';
+import axios from "axios";
 
-import { Message, MessageType, MsgDestination } from "./shared";
-
-chrome.runtime.onMessage.addListener((msg: Message, sender, sendResponse) => {
-    if (msg.destination == MsgDestination.BACKGROUND) {
-        console.log(msg.payload.message);
-        chrome.runtime.sendMessage<Message, string>({
-            type: MessageType.LINK,
-            destination: MsgDestination.POPUP,
-            payload: msg.payload,
-        }, (resp) => {
-            console.log(resp);
-        });
-        sendResponse("Message received!");
-    }
-})
-
+chrome.downloads.onCreated.addListener((it) => {
+    axios.post("localhost:4000/url", it.finalUrl)
+    .then((res) => res.data)
+    .then((data) => console.log(data));
+    chrome.downloads.erase(
+        {
+            id: it.id,
+        }
+    );
+});
 
