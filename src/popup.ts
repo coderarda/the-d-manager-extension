@@ -1,7 +1,7 @@
 'use strict';
 
 import './popup.css';
-import { Message, MessageType, MsgDestination } from './shared';
+import type { DownloadURLObj } from './shared';
 
-const list = document.getElementById("downloads");
+const list = document.querySelector("ul");
 

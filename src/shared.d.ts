@@ -3,6 +3,12 @@ export enum MessageType {
     LINK = 1,
 }
 
+export type DownloadURLObj = {
+    url: string,
+    title: string,
+    filesize: number,
+};
+
 export enum MsgDestination {
     POPUP = 0,
     BACKGROUND, 
@@ -13,6 +19,11 @@ export type Message = {
     type: MessageType,
     destination: MsgDestination,
     payload: {
-        message: string,
+        message: DownloadURLObj,
     },
 };
+
+export type MsgResponse = {
+    status: "success" | "error",
+    
+}
