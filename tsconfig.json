@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
-      "outDir": "./build",
-      "noImplicitAny": true,
-      "module": "ES6",
-      "target": "ES6",
-      "sourceMap": true,
-      "allowJs": true,
-      "moduleResolution": "node"
+        "strict": true,
+        "outDir": "./build",
+        "noImplicitAny": true,
+        "module": "ES6",
+        "target": "ES6",
+        "sourceMap": true,
+        "allowJs": true,
+        "moduleResolution": "node"
     }
-  }
+}

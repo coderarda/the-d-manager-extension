@@ -4,6 +4,7 @@ export enum MessageType {
 }
 
 export type DownloadURLObj = {
+    id: number,
     url: string,
     title: string,
     filesize: number,
