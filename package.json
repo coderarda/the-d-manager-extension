@@ -24,6 +24,7 @@
     "webpack-merge": "^5.10.0"
   },
   "dependencies": {
+    "adm-zip": "^0.5.16",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "node-polyfill-webpack-plugin": "^2.0.1"

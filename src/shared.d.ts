@@ -26,5 +26,4 @@ export type Message = {
 
 export type MsgResponse = {
     status: "success" | "error",
-    
 }
